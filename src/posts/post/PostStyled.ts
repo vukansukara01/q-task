@@ -8,11 +8,12 @@ const PostWrapper = styled.div`
   margin: 20px;
   background: white;
 `;
-const PostTitle = styled.div`
-  color: #66defb;
+const PostTitle = styled.h3`
+  color: ${(props) => props.theme.colors.primary};
   font-weight: 700;
+  margin: 0;
 `;
-const PostBody = styled.div`
+const PostBody = styled.p`
   color: #616161;
 `;
 

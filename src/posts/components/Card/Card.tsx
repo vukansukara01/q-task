@@ -1,6 +1,6 @@
 import React from "react";
-import { CardWrapper, Title, Body, UserName } from "./CartUI";
-import { UserInterface } from "../../../model/UserInterface";
+import { CardWrapper, Title, Body, UserName } from "./CartStyled";
+import { UserInterface } from "../../../model/UserModel";
 
 interface CardI {
   user: UserInterface | null;

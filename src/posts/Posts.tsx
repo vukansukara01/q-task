@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import Card from "./components/Card/Card";
 import { getAllPosts } from "../services/PostsService";
 import { PostInterface } from "../model/PostModel";
-import { PostsWrapper } from "./PostsUi";
-import Search from "../../components/search/Search";
-import { UserInterface } from "../model/UserInterface";
+import { PostsWrapper } from "./PostsStyled";
+import Search from "../components/search/Search";
+import { UserInterface } from "../model/UserModel";
 import { getAllUsers } from "../services/UserService";
-import { useNavigate } from "react-router-dom";
-import Post from "../post/Post";
-import Spiner from "../../components/spinner/Spiner";
+import Post from "./post/Post";
+import Spinner from "../components/spinner/Spinner";
 
 interface PostsI {
   helloMessage: string;
@@ -19,8 +18,6 @@ const Posts: React.FC<PostsI> = ({ helloMessage }) => {
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  const navigate = useNavigate();
 
   console.log(helloMessage + " " + Post.displayName);
 
@@ -43,12 +40,12 @@ const Posts: React.FC<PostsI> = ({ helloMessage }) => {
     return null;
   };
   const openPost = (id: number) => {
-    navigate(`/post/${id}`);
+    window.open(`/post/${id}`, "_blank", "noopener,noreferrer");
   };
 
   return (
     <div>
-      {isLoading && <Spiner />}
+      {isLoading && <Spinner />}
       <Search setSearchTerm={setSearchTerm} helloMessage={helloMessage} />
       <PostsWrapper>
         {postsList
@@ -66,6 +63,7 @@ const Posts: React.FC<PostsI> = ({ helloMessage }) => {
           .map((item: PostInterface) => {
             return (
               <Card
+                key={item.id}
                 user={getUserById(item.userId)}
                 id={item.id}
                 title={item.title}

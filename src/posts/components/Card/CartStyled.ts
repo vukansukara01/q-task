@@ -12,17 +12,17 @@ const CardWrapper = styled.div`
   margin: 20px;
   background: white;
 `;
-const Title = styled.div`
+const Title = styled.h3`
   margin: 0 0 15px 0;
-  color: #66defb;
+  color: ${(props) => props.theme.colors.primary};
   font-weight: 700;
 `;
 
-const Body = styled.div`
+const Body = styled.p`
   color: #616161;
 `;
 
-const UserName = styled.div`
+const UserName = styled.p`
   color: #616161;
 `
 

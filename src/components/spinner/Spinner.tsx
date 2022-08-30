@@ -1,6 +1,6 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
-import {SpinnerWrapper} from "./SpinnerUi";
+import {SpinnerWrapper} from "./SpinnerStyled";
 
 const Spinner: React.FC = () => {
   return (

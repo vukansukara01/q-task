@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { SearchInput, SearchWrapper } from "./SearchUi";
-import Post from "../../features/post/Post";
+import React from "react";
+import { SearchInput, SearchWrapper } from "./SearchStyled";
+import Post from "../../posts/post/Post";
 
 interface SearchI {
   helloMessage: string;
